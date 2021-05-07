@@ -6,5 +6,15 @@ h1{
     color: chartreuse;
 }
 body{
-    background-color: black;
+    background-color:skyblue;
+}
+.d1{
+    border: 5px;
+    border-color: purple;
+    border-style: groove;
+    background-color: sandybrown;
+}
+.d2{
+    border: 5px solid springgreen;
+    background-color: sandybrown;
 }
