@@ -1,0 +1,32 @@
+.container{
+    
+    display: flex;
+    background-color: brown;
+    height: 1000px;
+    flex-flow: row wrap;
+    align-items: flex-end;
+    justify-content: space-between;
+      
+    
+    
+}
+.box1{
+    background-color: lawngreen;
+    height: 20%;
+    width: 400px;
+}
+.box2{
+   background-color: red;
+   height: 20%;
+   width: 400px;
+}
+.box3{
+   background-color: gold;
+   height: 20%;
+   width: 400px;
+}
+.box4{
+  background-color: silver;
+  height: 20%;
+  width: 400px;
+}
