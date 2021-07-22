@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src= "https://use.fontawesome.com/releases/v5.15.3/js/all.js" data-auto-replace-svg="nest"></script>
+    <link rel="stylesheet" href="validation.css">
+    <title>Validation</title>
+</head>
+<body>
+    <div class="mother">
+        <div class="header">
+            <h2>Create an Account</h2>
+        </div>
+        <form action="" id="form" class="form">
+            
+            <div class="formcontrol" >
+                <label for="username">Username</label>
+                <input type="text"  id="username" placeholder="Username">
+                <i class="far fa-check-circle" aria-hidden="true"></i>
+                <small>Error message</small>
+                
+            </div>
+            <div class="formcontrol">
+                <label for="email">Email   </label>
+                <input type="email" id="email" placeholder="example@gmail.com">
+                <i class="far fa-check-circle" aria-hidden="true"></i>
+                <small>Error message</small>
+            </div>
+            <div class="formcontrol ">
+                <label for="Password">Password</label>
+                <input type="password" id="password" placeholder="password">
+                <i class="far fa-check-circle" aria-hidden="true"></i>
+                <small>Error message</small>
+            </div>
+            <div class="formcontrol">
+                <label for="password2">Password checker</label>
+                <input type="text" id="password2" placeholder="password">
+                <i class="far fa-check-circle" aria-hidden="true"></i>
+                <small>Error message</small>
+            </div>
+            <div>
+                <button>Submit form</button>
+            </div>
+                             
+                
+            
+        </form>
+    </div>
+    <script src="validation.js"></script>
+</body>
+</html>

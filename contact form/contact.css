@@ -1,0 +1,89 @@
+*{
+    box-sizing: border-box;
+}
+/*main css*/
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    background-image: url(background.jpg);
+    background-repeat: round;
+    
+}
+.container{
+    background-color: rgba(128, 128, 128, 0.719);
+    border-radius: 10px;
+    box-shadow: 5px 5px 30px black;
+    padding: 40px;
+}
+/*input boxes css*/
+.flex{
+    display: flex;
+    width: 100%;
+}
+#fixed{
+    width: 25%;
+}
+.inputbox{
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    position: relative;
+}
+.inputbox input{
+     border:2px solid gray;
+     border-radius: 3px;
+     display: block;
+     font-family: inherit;
+     padding:10px;
+     width:100%;
+}
+.inputbox input:focus{
+    outline: 0;
+    border-color: chocolate;
+}
+.inputbox small{
+    color: red;
+    position: absolute;
+    left: 0%;
+    visibility: hidden;
+}
+/*java css*/
+.inputbox.success input{
+    border-color: green;
+}
+.inputbox.error input{
+    border-color: red;
+}
+.inputbox.error small{
+    visibility: visible;
+}
+/*button css*/
+.button{
+    display: flex;
+}
+.button button{
+    border-style: none;
+    border-radius: 3px;
+    display: block;
+    font-family: inherit;
+    font-size: 20px;
+    padding:10px;
+    width:100%;
+}
+#clear{
+    width: 50%;
+    background-color: red;
+}
+#clear:hover{
+    background-color: rgb(224, 64, 64);
+}
+#submit{
+    background-color: green;
+}
+#submit:hover{
+    background-color: darkgreen;
+}

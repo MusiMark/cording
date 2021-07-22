@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>musi</title>
+    <style>
+        #container{
+            width:400px;
+            height: 400px;
+            position: relative;
+            background:yellow;
+        }
+        #anime{
+            width:50px;
+            height: 50px;
+            position:absolute;
+            background:red;
+        }
+    </style>
+</head>
+<body>
+    <h1>ANIMATION</h1>
+    <div id="container">
+          <div id="anime"></div>
+    </div><br>
+    <button onclick="m()">MUSI</button>
+    <h1>Dyanamic html content</h1>
+    <p>DATE:</p>
+    <p id="date"></p>
+    <script>
+        function m() {
+            let id = null;
+            const musi= document.getElementById('anime');
+            let pos =0;
+            clearInterval(id);
+            id=setInterval(frame,5);
+            function frame(){
+                if (pos == 350){
+                    clearInterval(id);
+                }else{
+                    pos++;
+                    musi.style.top= pos + 'px';
+                    musi.style.left= pos + 'px';
+                }
+            } 
+        }
+        document.getElementById('date').innerHTML= Date();
+
+    </script>
+</body>
+</html>

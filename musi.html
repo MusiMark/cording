@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src= "https://use.fontawesome.com/releases/v5.15.3/js/all.js" data-auto-replace-svg="nest"></script>
+    <style>
+        *{
+    box-sizing: border-box;
+}
+body{
+    background-color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100px;
+    margin: 0;
+    margin-top: 100px;
+    margin-bottom: 100px;
+ }
+ .mother{
+     background-color: rgba(226, 225, 225, 0.849);
+     border-radius: 20px;
+     width: 400px;
+     max-width: 100%;
+     box-shadow:0px 5px 10px rgb(120, 146, 146);
+     overflow: hidden;
+     padding: 30px;
+ }
+ .header h2{
+     font-family: Arial, Helvetica, sans-serif;
+     color: tomato;
+
+ }
+ .formcontrol{
+     margin-bottom: 10px;
+     padding-bottom: 10px;
+     position: relative;
+ }
+ .formcontrol label{
+     display: inherit;
+     margin-bottom: 2px;
+ }
+ .formcontrol input{
+     border:2px solid tan;
+     border-radius: 3px;
+     display: block;
+     font-family: inherit;
+     padding:10px;
+     width:100%;
+ }
+ .formcontrol i{
+     position: absolute;
+     top: 40px;
+     right: 10px;
+     visibility: hidden;
+ }
+ .formcontrol.success i.fa-check-circle {
+     color: green;
+     visibility: visible;
+ }
+ .formcontrol input:focus {
+	outline: 0;
+	border-color: rgb(135, 204, 164);
+}
+ .formcontrol.success input{
+     border-color: chartreuse;
+ }
+ .formcontrol.error input{
+     border-color: red;
+ }
+ form button{
+     width: 100%;
+     height: 30px;
+     font-size: 20px;
+     border: 2px solid rgb(196, 196, 196);
+     border-radius: 3px;
+
+ }
+ .formcontrol small{
+     color: red;
+     position: absolute;
+     left: 0%;
+     visibility: hidden;
+ }
+ .formcontrol.error small{
+     visibility: visible;
+ }
+    </style>
+    <title>Validation</title>
+</head>
+<body>
+    <div class="mother">
+        <div class="header">
+            <h2>Create an Account</h2>
+        </div>
+        <form action="" id="form" class="form">
+            
+            <div class="formcontrol">
+                <label for="username">Username</label>
+                <input type="text" id="username" placeholder="Username">
+                <i class="far fa-check-circle" aria-hidden="true"></i>
+                <small>Error message</small>
+                
+            </div>
+            <div class="formcontrol">
+                <label for="email">Email   </label>
+                <input type="email" id="email" placeholder="example@gmail.com">
+                <i class="far fa-check-circle" aria-hidden="true"></i>
+                <small>Error message</small>
+            </div>
+            <div class="formcontrol ">
+                <label for="Password">Password</label>
+                <input type="password" id="password" placeholder="password">
+                <i class="far fa-check-circle" aria-hidden="true"></i>
+                <small>Error message</small>
+            </div>
+            <div class="formcontrol">
+                <label for="password2">Password checker</label>
+                <input type="text" id="password2" placeholder="password">
+                <i class="far fa-check-circle" aria-hidden="true"></i>
+                <small>Error message</small>
+            </div>
+            <div>
+                <button>Submit</button>
+            </div>
+                             
+                
+            
+        </form>
+    </div>
+    <script>
+        const form = document.getElementById('form');
+const username = document.getElementById('username');
+const email = document.getElementById('email');
+const password = document.getElementById('password');
+const password2 = document.getElementById('password2');
+
+// eventhappening
+
+form.addEventListener('submit',e =>{
+    e.preventDefault();
+    checkInputs();
+});
+
+function checkInputs(){
+   //trim
+    const usernameValue = username.value.trim();
+    const emailValue = email.value.trim();
+    const passwordValue = password.value.trim();
+    const password2Value = password2.value.trim();
+
+ //username
+  if (usernameValue === '') {
+    setErrorFor( username,"username can't be blank");    
+  }else{
+    setSuccessFor(username);
+  }
+  //password
+  if(passwordValue === ''){
+     setErrorFor(password,"password can't be blank");
+  }else{
+     setSuccessFor(password);
+  }
+ //email
+ if (emailValue === '') {
+    setErrorFor( email,"email can't be blank")
+ }else {
+    setSuccessFor(email)    
+ }
+ //password2
+  if(password2Value === ''){
+     setErrorFor(password2,"password can't be blank");
+  }else if(passwordValue !== password2Value){
+     setErrorFor(password2,'wrong password');
+  }else{
+     setSuccessFor(password2);
+  }
+  
+  
+}
+function setErrorFor(input, message) {
+   const formcontrol = input.parentElement;
+   const small = formcontrol.querySelector('small');
+   formcontrol.className = 'formcontrol error';
+   small.innerText = message ;
+}
+function setSuccessFor(input){
+   const formcontrol = input.parentElement;
+   formcontrol.className = 'formcontrol success';
+}
+    </script>
+</body>
+</html>
